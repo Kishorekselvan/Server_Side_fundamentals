@@ -1,0 +1,134 @@
+/* Main Content Container */
+.flex-1 {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 25, 47, 0.95) 0%,
+    rgba(15, 35, 65, 0.95) 100%
+  );
+  padding: 2rem;
+}
+
+/* Typewriter Heading */
+.text-cyan-400 {
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(100, 200, 255, 0.2);
+  transition: text-shadow 0.3s ease;
+}
+
+.text-cyan-400:hover {
+  text-shadow: 0 0 15px rgba(0, 217, 255, 0.8), 
+              0 0 30px rgba(0, 150, 255, 0.4);
+}
+
+/* Concepts Grid Layout - 2 columns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+/* Card Styling */
+.concept-card {
+  background: linear-gradient(
+    145deg,
+    rgba(30, 60, 114, 0.8) 0%,
+    rgba(42, 82, 152, 0.8) 100%
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(100, 200, 255, 0.15);
+  box-shadow:
+    0 4px 20px rgba(0, 78, 255, 0.2),
+    inset 0 0 10px rgba(0, 150, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Enhanced Hover Effects */
+.concept-card:hover {
+  box-shadow:
+    0 8px 30px rgba(0, 100, 255, 0.3),
+    inset 0 0 15px rgba(0, 200, 255, 0.2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Title Glow Effect */
+.concept-card h3 {
+  color: #e0f7ff;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(100, 200, 255, 0.2);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px rgba(100, 200, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.concept-card:hover h3 {
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.8),
+               0 0 20px rgba(0, 150, 255, 0.4);
+  color: #00d9ff;
+}
+
+/* Description Glow - Modified for light color on hover */
+.concept-card p {
+  color: #a0d8ff;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.concept-card:hover p {
+  color: #00d9ff; /* Matching the title's cyan color */
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* Metallic Accent Animation */
+.concept-card:hover {
+  position: relative;
+}
+
+.concept-card:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 200, 255, 0.7),
+    transparent
+  );
+  animation: metallic-glow 1.5s ease-in-out;
+}
+
+@keyframes metallic-glow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .flex-1 {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-cyan-400 {
+    font-size: 1.8rem;
+  }
+}
