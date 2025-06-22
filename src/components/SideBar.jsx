@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { concepts } from '../data/concepts';
-import '../styles/Sidebar.css';
+import '../styles/SideBar.css';
 
 const Sidebar = () => {
   return (
