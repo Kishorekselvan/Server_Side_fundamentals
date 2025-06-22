@@ -2,7 +2,7 @@ import PageWrapper from '../components/PageWrapper';
 import ConceptCard from '../components/ConceptCard';
 import { concepts } from '../data/concepts';
 import { Typewriter } from 'react-simple-typewriter';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/SideBar';
 import '../styles/Home.css';
 const Home = () => (
   <PageWrapper>
